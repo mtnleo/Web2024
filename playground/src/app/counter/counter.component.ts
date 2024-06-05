@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { count } from 'console';
 
 @Component({
   selector: 'app-counter',
@@ -8,6 +7,7 @@ import { count } from 'console';
 })
 export class CounterComponent {
  counterValue: number = 0;
+ counterTitle: string = "Count It!";
 
  up() {
   this.counterValue++;

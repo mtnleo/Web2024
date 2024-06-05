@@ -1,5 +1,5 @@
 <div class="counter">
-    <h1 appCapitalizeAll>count it!</h1><br>
+    <h1 appCapitalizeAll>{{ counterTitle | changeVowels}}</h1><br>
     <h2>{{counterValue}}</h2>
 
     <button (click)="up()">+</button>   
