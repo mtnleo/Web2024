@@ -1,9 +1,21 @@
-<div class="counter">
-    <h1 appCapitalizeAll>{{ counterTitle | changeVowels}}</h1><br>
-    <h2>{{counterValue}}</h2>
-
-    <button (click)="up()">+</button>   
-    <button (click)="down()">-</button>
+<div class="container">
+    <div class="row">
+        <h1 appCapitalizeAll>{{ counterTitle | changeVowels}}</h1><br>
+    </div>
+    <div class="row">
+        <h2>{{counterValue}}</h2>
+    </div>
+        
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-primary" (click)="up()">+</button>
+         </div>
+        <div class="col">
+            <button class="btn btn-primary" (click)="down()">-</button>
+        </div>
+    </div>
+      
+    
 
 </div>
 
