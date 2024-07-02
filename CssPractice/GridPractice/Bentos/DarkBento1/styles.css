@@ -56,12 +56,13 @@ body {
 
 .users_container {
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 30% 70%;
 }
 
 .users_div1 {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     grid-row: 1 / 2;
 }
 
@@ -140,4 +141,19 @@ body {
     opacity: 70%;
 
     overflow: hidden;
+}
+
+/* TIME */
+
+.time_container {
+    display: grid;
+    grid-template-rows: 40% 60%;
+    text-align: center;
+}
+
+.time_div2,
+.time_div1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
