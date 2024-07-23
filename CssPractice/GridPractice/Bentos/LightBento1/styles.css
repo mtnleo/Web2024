@@ -4,6 +4,8 @@ body {
 
 }
 
+/** MAIN GRID **/
+
 .container {
     display: grid;
     grid-template-rows: 37% 1fr;
@@ -20,10 +22,40 @@ body {
 
 .bento {
     border: 2px solid blue;
+    margin: 15px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 50%);
+    gap: 20px;
 }
 
-.bento div {
+.bento > div {
     border: 2px solid lightblue;
+    background-color: white;
+    margin: 10px;
 
     padding: 5px;
 }
+
+.bento > div:nth-child(1) {
+    grid-column: 1 / span 2;
+    grid-row: span 1;
+}
+
+.bento > div:nth-child(2) {
+    grid-column: 1 / 2;
+    grid-row: span 1;
+}
+
+.bento > div:nth-child(3) {
+    grid-column: 2 / 3;
+    grid-row: span 1;
+}
+
+.bento > div:nth-child(4) {
+    grid-column: 3 / 5;
+    grid-row: 1 / -1;
+}
+
+/** CONTAINER **/
