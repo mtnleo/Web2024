@@ -4,11 +4,11 @@ body {
 
 }
 
-/** MAIN GRID **/
+/** ####### MAIN GRID ####### **/
 
 .container {
     display: grid;
-    grid-template-rows: 37% 1fr;
+    grid-template-rows: 37% 50%;
 
     height: 100vh;
 }
@@ -25,17 +25,17 @@ body {
     margin: 15px;
 
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 50%);
-    gap: 20px;
+    grid-template-columns: repeat(4, minmax(200px, 250px));
+    grid-template-rows: repeat(2, minmax(200px, 250px));
+    gap: 0px;
 }
 
 .bento > div {
-    border: 2px solid lightblue;
     background-color: white;
     margin: 10px;
+    border-radius: 10px;
 
-    padding: 5px;
+    padding: 30px;
 }
 
 .bento > div:nth-child(1) {
@@ -58,4 +58,67 @@ body {
     grid-row: 1 / -1;
 }
 
-/** CONTAINER  **/
+/** ####### CONTAINER CHILDREN ####### **/
+
+/* SIGN ON */
+
+.signin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    padding: 20px;
+    
+}
+
+/* API */
+
+.api {
+    text-align: center;
+
+    padding: 20px;
+}
+
+/* PROVIDER */
+
+.provider {
+    text-align: center;
+    display: grid;
+    grid-template-rows: 1fr;
+}
+
+.provider h3 {
+    font-size:60px;
+}
+
+/* ABOUT */
+
+.about {
+    padding: 20px;
+
+    display: grid;
+    grid-template-rows: 1fr, 4fr, 6fr;
+}
+
+.about h3 {
+    font-size: x-large;
+
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.about p {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+
+    color: gray;
+}
+
+.about div {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
