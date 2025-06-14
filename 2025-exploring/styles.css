@@ -3,15 +3,19 @@
     padding: 0;
 }
 
+body {
+    background: #0b3630;
+    background: radial-gradient(circle, rgba(11, 54, 48, 1) 1%, rgba(7, 22, 36, 1) 100%);
+}
+
 .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
-    gap: 1px;
 }
 
 .cell {
-    background-color: black;
-    border: 1px #777;
+    background-color: transparent;
+    border: solid .5px gray;
     height: 2rem;
     width: 2rem;
 }
