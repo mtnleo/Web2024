@@ -1,5 +1,6 @@
 const cellSize = 32; // 2 rem
 let intervalId = null; 
+let iterations = 0;
 
 function initCells() {
     let cpw = Math.floor(window.innerWidth / cellSize);
@@ -104,16 +105,11 @@ function checkCells() {
         
     })
 
+    iterations++;
+    document.getElementById('iter-counter').innerText = 'Iterations: ' + iterations;
     killCells(cellsToKill);
     spawnCells(cellsToSpawn);
 }
-/*
-function run() {
-        setTimeout(() => {
-            checkCells();
-        }, 500)
-
-}*/
 
 window.addEventListener("DOMContentLoaded", () => {
     initCells();
@@ -121,9 +117,11 @@ window.addEventListener("DOMContentLoaded", () => {
     
     document.getElementById('run').addEventListener('click', () => {
             if (intervalId) {
+                document.getElementById('run').innerHTML = 'Run'
                 clearInterval(intervalId);
                 intervalId = null;
             } else { // Pause
+                document.getElementById('run').innerHTML = 'Pause'
                 intervalId = setInterval(() => {
                     checkCells();
                 }, 300);
