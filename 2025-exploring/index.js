@@ -87,7 +87,7 @@ function checkCells() {
         x = value.id.split('-')[0] 
         y = value.id.split('-')[1] 
         
-        console.log(x, '-', y);
+        //console.log(x, '-', y);
 
         let aliveNeighbors = checkNeighborsAlive(x, y);
 
@@ -120,10 +120,15 @@ window.addEventListener("DOMContentLoaded", () => {
 
     
     document.getElementById('run').addEventListener('click', () => {
-            if (intervalId) return; // Already running
-            intervalId = setInterval(() => {
-                checkCells();
-            }, 300);
+            if (intervalId) {
+                clearInterval(intervalId);
+                intervalId = null;
+            } else { // Pause
+                intervalId = setInterval(() => {
+                    checkCells();
+                }, 300);
+            }
+            
     })
     
 });
