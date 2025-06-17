@@ -4,7 +4,7 @@ let iterations = 0;
 
 function initCells() {
     let cpw = Math.floor(window.innerWidth / cellSize);
-    let cph = Math.floor(window.innerHeight / cellSize);
+    let cph = Math.floor(window.innerHeight / cellSize) - 1;
     let containerElement = document.querySelector(".container");
     let x, y = 0;
 
@@ -56,12 +56,12 @@ function checkNeighborsAlive(x, y) {
         checkArrayX[0] = cpw -1;
     }
     if (checkArrayY[0] < 0) {
-        checkArrayY[0] = cph -1;
+        checkArrayY[0] = cph -2;
     }
     if (checkArrayX[2] > cpw -1) {
         checkArrayX[2] = 0;
     }
-    if (checkArrayY[2] > cph -1) {
+    if (checkArrayY[2] > cph -2) {
         checkArrayY[2] = 0;
     }
 
