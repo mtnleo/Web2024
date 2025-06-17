@@ -1,6 +1,7 @@
 const cellSize = 32; // 2 rem
 let intervalId = null; 
 let iterations = 0;
+let isMouseDown = false;
 
 function initCells() {
     let cpw = Math.floor(window.innerWidth / cellSize);
@@ -21,6 +22,12 @@ function initCells() {
                 newElement.style.backgroundColor = 'white';
             }
         });
+        newElement.addEventListener('mouseover', () => {
+            if (isMouseDown) {
+                newElement.style.backgroundColor = 'white';
+
+            }
+        })
         y = Math.floor((i / cpw));
         x = i - (cpw * y);
         newElement.id = `${x}-${y}`;
@@ -129,4 +136,12 @@ window.addEventListener("DOMContentLoaded", () => {
             
     })
     
+});
+
+document.addEventListener("mousedown", () => {
+  isMouseDown = true;
+});
+
+document.addEventListener("mouseup", () => {
+  isMouseDown = false;
 });
